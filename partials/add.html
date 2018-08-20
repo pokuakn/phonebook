@@ -1,0 +1,59 @@
+<style>
+    input.ng-invalid.ng-touched{
+        border: 2px solid red;
+    }
+</style>
+
+
+<div class="container" >
+        <header>
+            <h3>Add New Contact</h3>
+            <small style="color:red; display: block;">All fields are required.</small>
+            <hr/>
+        </header>
+        <form name="addForm" novalidate>
+        <div class="form-group">
+                <b><label>Name:</label></b> 
+                <input type="text" class="form-control" ng-model="newContact.name" name="name" placeholder="Name" ng-required="true">
+                <span ng-show="addForm.name.$touched && addForm.name.$invalid">
+                    <small style="color:red; display:block;">
+                        Enter name
+                    </small>
+                </span>
+                <br>
+                <b><label>Email:</label></b> 
+                <input type="email" class="form-control" ng-model="newContact.email" name="email" placeholder="username@email.com" ng-required="true"> 
+                <span ng-show="addForm.email.$touched && addForm.email.$invalid">
+                    <small style="color:red; display:block;">
+                        Enter a valid email e.g. username@email.com
+                    </small>
+                </span><br>
+                <b><label>Birthday:</label></b>
+                <input type="text" class="form-control" ng-model="newContact.birthday" id="datepicker" name="bdate" placeholder="mm/dd/yyyy" ng-required="true" ng-pattern="date_regex">
+                <span ng-show="addForm.bdate.$touched && addForm.bdate.$invalid">
+                    <small style="color:red; display:block;">
+                        Enter a valid birth date e.g. mm/dd/yyyy
+                    </small>
+                </span>
+                <br>
+                <b><label>Phone:</label></b>
+                <input type="text" class="form-control" ng-model="newContact.phone" name="phone" phone-format ng-required="true" placeholder="(xxx) xxx-xxxx">
+                <span ng-show="addForm.phone.$touched && addForm.phone.$invalid">
+                    <small style="color:red; display:block;">
+                        Enter a valid phone number e.g. (xxx) xxx-xxxx
+                    </small>
+                </span><br>
+            </div>
+        <div>
+            <hr>
+            <button ng-click="addContact()" class="btn btn-sm btn-dark" ng-disabled="addForm.$invalid">Add Contact</button>
+            <a href="#/" class="btn btn-sm btn-primary">Go Home</a>
+            </div>
+        </form>
+</div>
+
+<script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+</script>

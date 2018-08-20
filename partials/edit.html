@@ -1,0 +1,70 @@
+<style>
+    input.ng-invalid{
+        border: 2px solid red;
+    }
+</style>
+
+
+<div class="container" >
+        <header>
+            <div class="contact-header">
+                <div class="contact-image">
+                    <img src="{{contactEdit.avatar}}" height="75" width="75" class="border border-secondary rounded "> 
+                </div>
+                <div class="contact-details">
+                    <h3>Edit Contact</h3>
+                    
+                </div>
+            </div>
+            <small style="color:red; display: block;">All fields are required.</small>
+        <hr/>
+        </header>
+        <form name="editForm" novalidate>
+        <div class="form-group">
+                <b><label>Name:</label></b> 
+                <input type="text" name="name" class="form-control" ng-model="contactEdit.name" placeholder="Name" ng-required="true"> 
+                <span ng-show="editForm.name.$invalid">
+                    <small style="color:red; display:block;">
+                        Enter name
+                    </small>
+                </span>
+                <br>
+                <b><label>Email:</label></b> <input type="email" class="form-control" name="email" placeholder="username@email.com" ng-required="true" ng-model="contactEdit.email"> 
+                <span ng-show="editForm.email.$invalid">
+                    <small style="color:red; display:block;">
+                        Enter a valid email e.g. username@email.com
+                    </small>
+                </span>
+                
+                <br>
+                <b><label>Birthday:</label></b>
+                <input type="text" class="form-control" id="datepicker" name="bdate" placeholder="e.g. mm/dd/yyyy" ng-required="true" ng-model="contactEdit.birthday" ng-pattern="date_regex">
+                <span ng-show="editForm.bdate.$invalid">
+                    <small style="color:red; display:block;">
+                        Enter a valid birth date e.g. mm/dd/yyyy
+                    </small>
+                </span>
+                <br>
+                <b><label>Phone:</label></b>
+                <input type="text" class="form-control" name="phone" ng-required="true" ng-model="contactEdit.phone">
+                <span ng-show="editForm.phone.$invalid">
+                    <small style="color:red; display:block;">
+                        Enter a 10-digit phone number
+                    </small>
+                </span>
+                
+                <br>
+            </div>
+        <div>
+            <hr>
+            <button ng-click="updateContact()" class="btn btn-sm btn-dark" ng-disabled="editForm.$invalid">Update Contact</button>
+            <a href="#/" class="btn btn-sm btn-primary">Go Home</a>
+            </div>
+        </form>
+</div>
+
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>

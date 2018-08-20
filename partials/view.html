@@ -1,0 +1,23 @@
+<div class="container" >
+        <header>
+            <div class="contact-header">
+                <div class="contact-image">
+                    <img src="{{contact.avatar}}" height="75" width="75" class="border border-secondary rounded "> 
+                </div>
+                <div class="contact-details">
+                    <h3>View Contact</h3>
+                </div>
+            </div>
+            <hr/>
+        </header>
+    <div>
+        <b>Name:</b> {{contact.name}}<br>
+        <b>Email:</b> {{contact.email}} <br>
+        <b>Date of Birth: </b>{{contact.birthday}}<br>
+        <b>Phone: </b> {{contact.phone | us_telephone_format}}<br>
+    </div>
+   <div>
+   <hr>
+        <a href="#/" class="btn btn-sm btn-primary">Go Home</a>
+   </div>
+</div>

@@ -1,0 +1,44 @@
+.contacts > li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.contacts > li .details {
+    position: absolute;
+    top: 10px;
+    left: 125px;
+}
+
+.contacts > li .image {
+    width: 85px;
+    background:#ccc;
+    margin-bottom: 8px;
+    padding: 5px;
+    border-radius: .25rem;
+    -ms-border-radius: .25rem;
+}
+
+.contact-header {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.contact-details {
+    position: absolute;
+    top: 25px;
+    left: 95px;
+}
+
+.contact-image {
+    width: 85px;
+    background:#ccc;
+    margin-bottom: 8px;
+    padding: 5px;
+    border-radius: .25rem;
+    -ms-border-radius: .25rem;
+}
+
+.container {
+    margin-left: 30px !important;
+}
